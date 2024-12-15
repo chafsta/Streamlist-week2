@@ -1,0 +1,36 @@
+/* src/components/styles/StreamList.css */
+.stream-list-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .stream-list-container h1 {
+    color: #007bff;
+  }
+  
+  .stream-list-container form {
+    margin-top: 20px;
+  }
+  
+  .stream-list-container input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+  }
+  
+  .stream-list-container button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .stream-list-container button:hover {
+    background-color: #0056b3;
+  }
+  

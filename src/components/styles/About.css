@@ -1,0 +1,15 @@
+/* src/components/styles/About.css */
+.about-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .about-container h1 {
+    color: #17a2b8;
+  }
+  
+  .about-container p {
+    font-size: 18px;
+    color: #555;
+  }
+  

@@ -1,0 +1,15 @@
+/* src/components/styles/Cart.css */
+.cart-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .cart-container h1 {
+    color: #dc3545;
+  }
+  
+  .cart-container p {
+    font-size: 18px;
+    color: #555;
+  }
+  

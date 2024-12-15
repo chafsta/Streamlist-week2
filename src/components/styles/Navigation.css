@@ -1,0 +1,26 @@
+/* src/components/styles/Navigation.css */
+nav {
+    background-color: #007bff;
+    padding: 10px 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+  }
+  
+  nav li {
+    font-size: 18px;
+  }
+  
+  nav a {
+    color: white;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
