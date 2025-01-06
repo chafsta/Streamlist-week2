@@ -1,26 +1,31 @@
-/* src/components/styles/Navigation.css */
-nav {
-    background-color: #007bff;
-    padding: 10px 20px;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    margin: 0;
-  }
-  
-  nav li {
-    font-size: 18px;
-  }
-  
-  nav a {
-    color: white;
-    font-weight: bold;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.top-bar {
+  width: 100%;
+  background-color: #e61f1f;
+  color: white;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.top-bar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.top-bar a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  padding: 20px;
+  text-align: center;
+}

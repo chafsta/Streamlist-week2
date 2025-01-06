@@ -1,0 +1,14 @@
+.theme-toggle-button {
+  background-color: #03dac6;
+  border: none;
+  padding: 0.3rem 0.6rem; /* Adjust padding to make the button smaller */
+  font-size: 0.8rem; /* Adjust font size to make the text smaller */
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 1rem;
+  color: white;
+}
+
+.theme-toggle-button:hover {
+  background-color: #018786;
+}

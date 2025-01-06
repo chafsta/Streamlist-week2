@@ -1,14 +1,15 @@
-// src/index.js
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App'; // Import the main App component
+import App from './App.js';
 
-// Create the root React DOM node
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const rootElement = document.getElementById('root'); // Ensure this ID matches index.html
+if (rootElement) {
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+} else {
+  console.error("Target container is not a DOM element.");
+}

@@ -2,42 +2,53 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
+    <meta name="description" content="Web site created using create-react-app" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
     <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  </head> 
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Top Bar Example</title>
+          <link rel="stylesheet" href="styles.css">
+      </head>
+      <body>
+          <nav class="top-bar">
+              <a href="#streamlist" class="nav-link">Streamlist</a>
+              <a href="#movies" class="nav-link">Movies</a>
+              <a href="#cart" class="nav-link">Cart</a>
+              <a href="#about" class="nav-link">About</a>
+          </nav>
+      </body>
+      </html>
+      
+    <!-- Search bar -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search..." />
+    </div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <!-- "top-links" section on the left side -->
+    <div class="top-links">
+      <a href="https://news.google.com/" target="_blank">Google News</a>
+      <a href="https://fonts.google.com/icons" target="_blank">Google Icons</a>
+      <a href="https://www.twitch.tv/" target="_blank">Twitch</a>
+      <a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a>
+      <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>
+      <a href="https://github.com/" target="_blank">GitHub</a>
+      <a href="https://codepen.io/" target="_blank">CodePen</a>
+      <a href="https://dev.to/" target="_blank">Dev.to</a>
+    </div>
+    <!-- Authentication Section -->
+    <div class="auth-section">
+      <form>
+        <input type="email" placeholder="Enter your email" />
+        <input type="password" placeholder="Enter your password" />
+        <button type="submit">Login</button>
+      </form>
+      <p>If no account, <a href="#">register</a></p>
+    </div>
   </body>
 </html>
