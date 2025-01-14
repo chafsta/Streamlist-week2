@@ -1,55 +1,51 @@
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_BASE_URL = 'https://api.themoviedb.org/3/movie/550?api_key=ea385c07d399a54f970e73ef8d13f340';
-const API_KEY = "ea38507d399a54f970e73ef8d13f340" 
 
-export const signUp = async (email, password) => {
-  try {
-    const response = await axios.post(`${API_BASE_URL}/signup`, { email, password }, {
-      params: { api_key: API_KEY },
-    });
-    return response.data;
-  } catch (error) {
-    console.error('Error signing up:', error);
-    throw error;
-  }
-};
+const API_KEY = 'ea38507d399a54f970e73ef8d13f340';
+const API_BASE_URL = 'https://api.themoviedb.org/3';
 
-export const login = async (email, password) => {
-  try {
-    const response = await axios.post(`${API_BASE_URL}/login`, { email, password }, {
-      params: { api_key: API_KEY },
-    });
-    return response.data;
-  } catch (error) {
-    console.error('Error logging in:', error);
-    throw error;
-  }
-};
+function StreamListPage() {
+  const [movies, setMovies] = useState([]); // State to store movie data
+  const [loading, setLoading] = useState(true);
 
-export const createSession = async (requestToken) => {
-  try {
-    const response = await axios.post(`${API_BASE_URL}/authentication/session/new`, {
-      request_token: requestToken,
-    }, {
-      params: { api_key: API_KEY },
-    });
-    return response.data.session_id;
-  } catch (error) {
-    console.error('Error creating session:', error);
-    throw error;
-  }
-};
+  useEffect(() => {
+    // Function to fetch popular movies
+    async function fetchMovies() {
+      try {
+        const response = await axios.get(`${API_BASE_URL}/movie/popular`, {
+          params: { api_key: API_KEY, language: 'en-US', page: 1 },
+        });
+        setMovies(response.data.results); // Update state with movie data
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching movies:', error);
+        setLoading(false);
+      }
+    }
 
-export const logout = async (sessionId) => {
-  try {
-    const response = await axios.delete(`${API_BASE_URL}/authentication/session`, {
-      params: { api_key: API_KEY },
-      data: { session_id: sessionId },
-    });
-    return response.data;
-  } catch (error) {
-    console.error('Error logging out:', error);
-    throw error;
-  }
-};
+    fetchMovies();
+  }, []);
+
+  return (
+    <div>
+      <h1>StreamList</h1>
+      {loading && <p>Loading movies...</p>}
+      <div className="movie-list">
+        {movies.map((movie) => (
+          <div key={movie.id} className="movie-item">
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt={movie.title}
+            />
+            <h3>{movie.title}</h3>
+            <p>{movie.overview}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+      );
+}
+export async function login(email, password) {
+}
+export default StreamListPage;

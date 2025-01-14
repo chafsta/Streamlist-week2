@@ -1,0 +1,28 @@
+/* Login.css */
+.auth-section {
+  display: flex;
+  justify-content: flex-end; /* Align to the right */
+  align-items: center; /* Center vertically */
+  padding: 10px;
+}
+
+.login-section {
+    position: relative;
+    margin-top: 10px;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+ 
+  .login-section input {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .login-section button {
+    padding: 0.5rem 1rem;
+  }
+  

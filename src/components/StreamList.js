@@ -21,6 +21,7 @@ const StreamList = ({ darkMode, toggleTheme }) => {
     fetchStreams();
   }, []);
 
+  // Declare a function for the form’s onSubmit
   const handleEventSubmit = (e) => {
     e.preventDefault();
     setEvents([...events, inputValue]);
@@ -30,11 +31,36 @@ const StreamList = ({ darkMode, toggleTheme }) => {
   console.log('Rendering StreamList with darkMode:', darkMode);
 
   return (
-    <div className="stream-list" style={{ textAlign: 'center', fontFamily: 'Roboto, sans-serif' }}>
-      <h1>Stream List</h1>
+    <div
+      className="stream-list"
+      style={{ textAlign: 'center', fontFamily: 'Roboto, sans-serif' }}
+    >
+      <h1>Popular Movie List</h1>
+
+      {/* Example form to add events */}
+      <form onSubmit={handleEventSubmit}>
+        <input
+          type="text"
+          value={inputValue}
+          placeholder="Enter event"
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+        <button type="submit">Add Event</button>
+      </form>
+
+      {/* Display any events you’ve added */}
+      <ul>
+        {events.map((evt, index) => (
+          <li key={index}>{evt}</li>
+        ))}
+      </ul>
+
+      {/* Display popular movies */}
       <ul>
         {streams && streams.length > 0 ? (
-          streams.map((stream) => <li key={stream.id}>{stream.title}</li>)
+          streams.map((stream) => (
+            <li key={stream.id}>{stream.title}</li>
+          ))
         ) : (
           <li>No streams available</li>
         )}

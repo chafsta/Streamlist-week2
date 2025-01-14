@@ -8,7 +8,7 @@
     "dotenv": "^16.4.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.28.1",
+    "react-router-dom": "^7.1.1",
     "react-scripts": "^5.0.1"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
@@ -41,5 +41,9 @@
     ]
   },
   "homepage": "/",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.37.4"
+  }
 }

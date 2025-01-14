@@ -2,29 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Web site created using create-react-app" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>Top Bar Example</title>   
     <title>React App</title>
-  </head> 
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Top Bar Example</title>
-          <link rel="stylesheet" href="styles.css">
-      </head>
-      <body>
-          <nav class="top-bar">
-              <a href="#streamlist" class="nav-link">Streamlist</a>
-              <a href="#movies" class="nav-link">Movies</a>
-              <a href="#cart" class="nav-link">Cart</a>
-              <a href="#about" class="nav-link">About</a>
-          </nav>
-      </body>
-      </html>
-      
+  </head>
+  <body>
+      <nav class="top-bar">
+          <a href="#streamlist" class="nav-link">Streamlist</a>
+          <a href="#movies" class="nav-link">Movies</a>
+          <a href="#cart" class="nav-link">Cart</a>
+          <a href="#about" class="nav-link">About</a>
+      </nav>
+  </body>
+  </html>
     <!-- Search bar -->
     <div class="search-bar">
       <input type="text" placeholder="Search..." />
@@ -43,6 +40,7 @@
     </div>
     <!-- Authentication Section -->
     <div class="auth-section">
+    <div id="root"></div>
       <form>
         <input type="email" placeholder="Enter your email" />
         <input type="password" placeholder="Enter your password" />

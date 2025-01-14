@@ -23,13 +23,14 @@ body, html {
 
 /* Full-page section styling */
 .stream-list {
-  width: 100%;
-  height: 100vh; /* Full viewport height */
-  padding: 2rem; /* Add padding inside the sections */
+  margin: 80px auto 20px auto;
+  padding: 20px;
+  max-width: 1200px;
+  padding: 0 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content vertically */
+  justify-content: center;/* Center content vertically */
   align-items: center; /* Center content horizontally */
   text-align: center;
 }
@@ -49,38 +50,40 @@ body, html {
   position: fixed; /* Make it stick to the top */
   top: 0;
   left: 0;
-  width: 100%; /* Ensure it spans across the full width of the page */
+  width: 100%; 
+  Height: 60px; 
   background-color: #e61f1f; /* Theme color */
   color: white;
   padding: 15px 30px; /* Adjust padding for better spacing */
   display: flex;
   justify-content: space-around; /* Distribute content to edges */
   align-items: center; 
-  z-index: 1000; /* Ensure it stays on top of other elements */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
+  z-index: 999; /* Ensure it stays on top of other elements */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
   box-sizing: border-box;
 }
-
+.main-content {
+  margin-top: 0px;      
+  padding: 0px;          
+}
 .top-bar a {
   font-size: 1rem;
   color: #ffffff;
   text-decoration: none;
-  margin: 0 15px;
+  margin: 50px 15px;
 }
 
 .top-bar a:hover {
   text-decoration: underline;
 }
 
-/* Sidebar or top-links navigation */
-/* Adjusted CSS for streamlist */
 
 .top-links {
   position: fixed;
   left: 0;
-  top: 150px; /* Increased top offset to make room for the search bar */
+  top: 150px; 
   padding: 1rem;
-  background-color: #f0f0f0; /* Optional: Distinct background for clarity */
+  background-color: #f0f0f0; 
   width: 200px;
   z-index: 10; /* Ensure it layers correctly */
 }
@@ -103,7 +106,7 @@ body, html {
 .search-bar {
   position: fixed;
   left: 0;
-  top: 80px; /* Positioned above the top-links */
+  top: 50px; /* Positioned above the top-links */
   padding: 10px;
   width: 200px;
   background-color: #f9f9f9; /* Optional: Light background for visibility */
@@ -127,15 +130,15 @@ body, html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  padding: 1rem;
+  position: absolute;
+  top: 20%;
+  left:20%; 
+  z-index: 1000;
+  width: 200px;
+  padding: 10px;
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+  border-radius: 5px;
 }
 
 .auth-section input,

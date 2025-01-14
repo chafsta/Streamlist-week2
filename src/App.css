@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  padding:0;
+  overflow-y: auto;
   font-family: Arial, sans-serif;
 }
 .light-mode {
@@ -12,47 +14,42 @@ body {
   color: #fff;
   min-height: 100vh;
 } 
-nav {
+
+//* Navigation Bar */
+.nav-bar {
   background-color: #6200ea;
   padding: 1rem;
-}
-
-nav ul {
-  list-style: none;
   display: flex;
-  justify-content: space-around;
-  padding: 12;
-  margin: 100;
+  justify-content: center; /* Center the links horizontally */
+  align-items: center; /* Center the links vertically */
+  position: sticky; /* Keep the bar at the top */
+  top: 0;
+  z-index: 1000; /* Ensure it stays above other content */
 }
 
-nav ul li {
-  margin: 0 1rem;
-}
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 700;
-}
-
-nav ul li a:hover {
-  text-decoration: underline;
+/* Navigation Links */
+.nav-bar ul {
+  display: flex;
+  gap: 2rem; /* Space between links */
+  list-style: none; /* Remove bullets */
+  margin: 0;
+  padding: 0;
 }
 
-/*button {
-  background-color: #03dac6;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-  margin: 1rem;
+.nav-bar ul li a.nav-link {
+  text-decoration: none; /* Remove underline */
+  color: orange; /* Make links orange */
+  font-weight: bold; /* Bold text */
+  transition: color 0.3s ease;
 }
 
-button:hover {
-  background-color: #018786;
-}*/
+.nav-bar ul li a.nav-link:hover {
+  color: darkorange; /* Change color on hover */
+  text-decoration: underline; /* Optional hover effect */
+}
+
 .category-movies img {
-  height: 225px;
+  height: 0;
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
@@ -62,11 +59,48 @@ button:hover {
 .category-movies img:hover {
   transform: scale(1.1);
 }
-#root {
-  min-height: 100vh;
+
+.movie-list {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
-      
+
+.movie-item {
+  width: 200px;
+  text-align: center;
+}
+
+.movie-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.movie-item h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.movie-item p {
+  font-size: 0.9rem;
+  color: #555;
+}
+.app-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+ /* visibility: visible !important; 
+  opacity: 1 !important; */       
+}
+
+.left-sidebar {
+   width: 250px; 
+  padding: 1rem;
+  border-right: 1px solid #ccc; 
+}
+
+.main-content {
+  flex: 1;
+  padding: 1rem;
+}
 
