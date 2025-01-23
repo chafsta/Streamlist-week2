@@ -1,44 +1,43 @@
-import React, { useState } from 'react';
-import './Login.css';
+import React, { useState } from "react";
 
+const Login = () => {
+  const [isRegistering, setIsRegistering] = useState(false);
 
-function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Logging in...');
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    try {
-      
-      console.log('Logged in with email:', email, 'password:', password);
-    } catch (error) {
-      console.error('Error logging in:', error);
-    }
-  };
+  const toggleRegister = () => setIsRegistering(!isRegistering);
 
   return (
-    <form className="login-section" onSubmit={handleLogin}>
-      <h2>Login</h2>
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-        required
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-        required
-      />
-      <button type="submit">Login</button>
-    </form>
-  )}
-}
+    <div className="login-container">
+      {isRegistering ? (
+        <div>
+          <h2>Register</h2>
+          <input type="text" placeholder="Full Name" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <button>Register</button>
+          <p>
+            Already have an account?{" "}
+            <button onClick={toggleRegister} className="link-button">
+              Login
+            </button>
+          </p>
+        </div>
+      ) : (
+        <div>
+          <h2>Login</h2>
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Password" />
+          <button>Login</button>
+          <p>
+            No account?{" "}
+            <button onClick={toggleRegister} className="link-button">
+              Register
+            </button>
+          </p>
+        </div>
+      )}
+    </div>
+  );
+};
+
 export default Login;
+

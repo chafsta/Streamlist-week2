@@ -1,106 +1,91 @@
-body {
-  margin: 0;
-  padding:0;
-  overflow-y: auto;
-  font-family: Arial, sans-serif;
-}
-.light-mode {
-  background-color: #fff;
-    color:  #000;  
-    min-height: 100vh;
-}
-.dark-mode {
-  background-color: #333;
-  color: #fff;
-  min-height: 100vh;
-} 
-
-//* Navigation Bar */
-.nav-bar {
-  background-color: #6200ea;
-  padding: 1rem;
-  display: flex;
-  justify-content: center; /* Center the links horizontally */
-  align-items: center; /* Center the links vertically */
-  position: sticky; /* Keep the bar at the top */
-  top: 0;
-  z-index: 1000; /* Ensure it stays above other content */
-}
-
-/* Navigation Links */
-.nav-bar ul {
-  display: flex;
-  gap: 2rem; /* Space between links */
-  list-style: none; /* Remove bullets */
-  margin: 0;
-  padding: 0;
-}
-
-.nav-bar ul li a.nav-link {
-  text-decoration: none; /* Remove underline */
-  color: orange; /* Make links orange */
-  font-weight: bold; /* Bold text */
-  transition: color 0.3s ease;
-}
-
-.nav-bar ul li a.nav-link:hover {
-  color: darkorange; /* Change color on hover */
-  text-decoration: underline; /* Optional hover effect */
-}
-
-.category-movies img {
-  height: 0;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-      
-.category-movies img:hover {
-  transform: scale(1.1);
-}
-
-.movie-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.movie-item {
-  width: 200px;
-  text-align: center;
-}
-
-.movie-item img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.movie-item h3 {
-  font-size: 1.2rem;
-  margin: 10px 0;
-}
-
-.movie-item p {
-  font-size: 0.9rem;
-  color: #555;
-}
+/* Layout */
 .app-container {
   display: flex;
-  flex-direction: row;
-  width: 100%;
- /* visibility: visible !important; 
-  opacity: 1 !important; */       
+  height: 100vh;
 }
 
 .left-sidebar {
-   width: 250px; 
-  padding: 1rem;
-  border-right: 1px solid #ccc; 
+  width: 20%;
+  background-color: #f5f5f5;
+  padding: 20px;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
 .main-content {
-  flex: 1;
-  padding: 1rem;
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
 }
 
+.right-sidebar {
+  width: 20%;
+  background-color: #f5f5f5;
+  padding: 20px;
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Bar */
+.nav-bar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #333;
+  padding: 10px;
+}
+
+.nav-bar ul {
+  display: flex;
+  gap: 15px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-bar .nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-bar .nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Login Component */
+.login-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-container h2 {
+  margin-bottom: 10px;
+}
+
+.login-container input {
+  display: block;
+  width: 90%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-container button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-container button.link-button {
+  background: none;
+  color: #007bff;
+  text-decoration: underline;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #0056b3;
+}

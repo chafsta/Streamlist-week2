@@ -1,7 +1,7 @@
 /* Login.css */
 .auth-section {
   display: flex;
-  justify-content: flex-end; /* Align to the right */
+  justify-content:  flex-end;/* Align to the right */
   align-items: center; /* Center vertically */
   padding: 10px;
 }

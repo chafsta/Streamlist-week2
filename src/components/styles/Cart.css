@@ -7,7 +7,8 @@ body {
 
 .top-bar {
   width: 100%;
-  background-color: #e61f1f;
+  background-color: orangered;
+
   color: white;
   padding: 10px 0;
   display: flex;
