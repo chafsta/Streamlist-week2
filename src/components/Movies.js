@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 const Movies = ({ addMovieToCart }) => {
   // Define the list of movies
   const movies = [

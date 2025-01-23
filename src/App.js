@@ -35,7 +35,7 @@ function App() {
             </Link>
           </li>
           <li>
-            <Link className="nav-link" to="/movies">
+            <Link className="Navigation" to="/movies">
               Movies
             </Link>
           </li>
