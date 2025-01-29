@@ -4,7 +4,11 @@ body {
   background-color: #f5f5f5;
   color: #333;
 }
-
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
 .top-bar {
   width: 100%;
   background-color: orangered;

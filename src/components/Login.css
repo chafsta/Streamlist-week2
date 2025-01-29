@@ -1,28 +1,38 @@
-/* Login.css */
+/* Align the login/register container to the right */
 .auth-section {
   display: flex;
-  justify-content:  flex-end;/* Align to the right */
+  justify-content: flex-end; /* Align to the right */
   align-items: center; /* Center vertically */
+  height: 100vh; /* Full-screen height */
+  background-color: #f4f4f4; /* Optional background */
   padding: 10px;
 }
 
-.login-section {
-    position: relative;
-    margin-top: 10px;
-    background-color: #f8f8f8;
-    padding: 20px;
-    border: 1px solid #ccc;
-  }
- 
-  .login-section input {
-    display: block;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    width: 100%;
-    max-width: 300px;
-  }
-  
-  .login-section button {
-    padding: 0.5rem 1rem;
-  }
-  
+/* Styling for the login/register container */
+.login-container {
+  background-color: #ff6347; /* Subtle red background */
+  padding: 20px;
+  border: 1px solid #0056b3; /* Blue border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow */
+  max-width: 350px; /* Limit width */
+  width: 100%;
+}
+
+/* Input fields styling */
+.login-container input {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Buttons styling */
+.login-container button {
+  padding: 0.5rem 1rem;
+  background-color: #0056b3;
+  color: white;
+}

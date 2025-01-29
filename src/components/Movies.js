@@ -1,54 +1,71 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Movies = ({ addMovieToCart }) => {
-  // Define the list of movies
-  const movies = [
-    { id: 1, title: 'Inception', genre: 'Sci-Fi', price: 12.99 },
-    { id: 2, title: 'The Dark Knight', genre: 'Action', price: 14.99 },
-    { id: 3, title: 'Interstellar', genre: 'Sci-Fi', price: 13.99 },
-  ];
+  const [popularMovies, setPopularMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchPopularMovies = async () => {
+      try {
+        const response = await axios.get(
+          "https://api.themoviedb.org/3/movie/popular?api_key=ea385c07d399a54f970e73ef8d13f340"
+        );
+        setPopularMovies(response.data.results || []);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching popular movies:", error);
+        setLoading(false);
+      }
+    };
+    fetchPopularMovies();
+  }, []);
 
   return (
     <div>
-      <h1>Streamlist - Movie Selection</h1>
-      {/* Show a message if there are no movies */}
-      {movies.length === 0 ? (
-        <p>No movies available at the moment.</p>
+      <h1>Popular Movies</h1>
+      {loading ? (
+        <p>Loading movies...</p>
+      ) : popularMovies.length === 0 ? (
+        <p>No popular movies available at the moment.</p>
       ) : (
         <div
           style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '20px',
-            padding: '20px',
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "20px",
+            padding: "20px",
           }}
         >
-          {movies.map((movie) => (
+          {popularMovies.map((movie) => (
             <div
               key={movie.id}
               style={{
-                border: '1px solid #ccc',
-                borderRadius: '10px',
-                padding: '10px',
-                width: '200px',
-                backgroundColor: '#f9f9f9',
+                border: "1px solid #ccc",
+                borderRadius: "10px",
+                padding: "10px",
+                width: "200px",
+                backgroundColor: "#f9f9f9",
               }}
             >
               <h3>{movie.title}</h3>
-              <p>Genre: {movie.genre}</p>
-              <p>Price: ${movie.price}</p>
+              <p>Release Date: {movie.release_date}</p>
               <button
                 style={{
-                  backgroundColor: '#007bff',
-                  color: 'white',
-                  padding: '5px 10px',
-                  border: 'none',
-                  borderRadius: '5px',
-                  cursor: 'pointer',
+                  backgroundColor: "#007bff",
+                  color: "white",
+                  padding: "5px 10px",
+                  border: "none",
+                  borderRadius: "5px",
+                  cursor: "pointer",
                 }}
-                onClick={() => addMovieToCart(movie)}
+                onClick={() =>
+                  addMovieToCart({
+                    id: movie.id,
+                    title: movie.title,
+                    price: 14.99, // Example price
+                  })
+                }
               >
                 Add to Cart
               </button>
@@ -56,7 +73,6 @@ const Movies = ({ addMovieToCart }) => {
           ))}
         </div>
       )}
-      <Link to="/cart">Go to Cart</Link>
     </div>
   );
 };

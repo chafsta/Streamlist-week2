@@ -2,6 +2,8 @@
 .app-container {
   display: flex;
   height: 100vh;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .left-sidebar {
@@ -11,81 +13,12 @@
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
-.main-content {
-  flex-grow: 1;
-  padding: 20px;
-  overflow-y: auto;
-}
 
-.right-sidebar {
-  width: 20%;
-  background-color: #f5f5f5;
-  padding: 20px;
-  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1);
-}
 
-/* Navigation Bar */
-.nav-bar {
-  display: flex;
-  justify-content: space-around;
-  background-color: #333;
-  padding: 10px;
-}
-
-.nav-bar ul {
-  display: flex;
-  gap: 15px;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-bar .nav-link {
-  color: white;
-  text-decoration: none;
-}
-
-.nav-bar .nav-link:hover {
-  text-decoration: underline;
-}
-
-/* Login Component */
-.login-container {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.login-container h2 {
-  margin-bottom: 10px;
-}
-
-.login-container input {
-  display: block;
-  width: 90%;
-  margin-bottom: 10px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.login-container button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.login-container button.link-button {
-  background: none;
-  color: #007bff;
-  text-decoration: underline;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.login-container button:hover {
-  background-color: #0056b3;
+  .right-sidebar {
+    width: 350px; /* Fixed width for the right sidebar */
+    padding: 20px;
+    background-color: #f1f1f1; /* Light gray background */
+    border-left: 1px solid #ccc; /* Separate with a border */
+    margin-left: auto; /* Push the sidebar to the right */
 }

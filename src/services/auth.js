@@ -5,7 +5,7 @@ import axios from 'axios';
 const API_KEY = 'ea38507d399a54f970e73ef8d13f340';
 const API_BASE_URL = 'https://api.themoviedb.org/3';
 
-function StreamListPage() {
+function Movies() {
   const [movies, setMovies] = useState([]); // State to store movie data
   const [loading, setLoading] = useState(true);
 
@@ -29,7 +29,7 @@ function StreamListPage() {
 
   return (
     <div>
-      <h1>StreamList</h1>
+      <h1>Movies</h1>
       {loading && <p>Loading movies...</p>}
       <div className="movie-list">
         {movies.map((movie) => (
@@ -48,4 +48,5 @@ function StreamListPage() {
 }
 export async function login(email, password) {
 }
-export default StreamListPage;
+export default Movies;
+

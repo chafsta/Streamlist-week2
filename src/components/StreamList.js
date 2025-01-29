@@ -1,119 +1,85 @@
-import React, { useState, useEffect } from 'react';
-import { Link, Routes, Route } from 'react-router-dom';
-import axios from 'axios';
-import './styles/StreamList.css';
-import Movies from './Movies.js';
+import React from "react";
+import "./styles/StreamList.css"; // Import your CSS file
 
-const StreamList = ({ darkMode }) => {
-  const themeStyles = {
-    backgroundColor: darkMode ? '#1e1e1e' : '#f5f5f5',
-    color: darkMode ? '#ffffff' : '#000000',
-  };
-
-  const [streams, setStreams] = useState([]);
-  const [inputValue, setInputValue] = useState('');
-  const [cart, setCart] = useState(() => {
-    const storedCart = localStorage.getItem('cart');
-    return storedCart ? JSON.parse(storedCart) : [];
-  });
-
-  const [events, setEvents] = useState(() => {
-    const storedEvents = localStorage.getItem('events');
-    return storedEvents ? JSON.parse(storedEvents) : [];
-  });
-
-  useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }, [cart]);
-
-  useEffect(() => {
-    localStorage.setItem('events', JSON.stringify(events));
-  }, [events]);
-
-  const addMovieToCart = (movie) => {
-    setCart((prevCart) => [...prevCart, movie]);
-  };
-
-  useEffect(() => {
-    const fetchStreams = async () => {
-      try {
-        const response = await axios.get(
-          'https://api.themoviedb.org/3/movie/popular?api_key=ea385c07d399a54f970e73ef8d13f340'
-        );
-        setStreams(response.data.results || []);
-      } catch (error) {
-        console.error('Error fetching streams:', error);
-      }
-    };
-    fetchStreams();
-  }, []);
-
-  const handleEventSubmit = (e) => {
-    e.preventDefault();
-    if (inputValue.trim()) {
-      setEvents([...events, inputValue]);
-      setInputValue('');
-    }
-  };
-
+const StreamList = () => {
   return (
-    <div className="stream-list" style={{ textAlign: 'center', fontFamily: 'Roboto, sans-serif' }}>
-      <nav>
-        <Link to="/">Home</Link> | <Link to="/movies">Movies</Link> |{' '}
-        <Link to="/cart">Cart ({cart.length})</Link>
-      </nav>
+    <div style={{ display: "flex", justifyContent: "space-between", padding: "10px" }}>
+      {/* Left Sidebar */}
+      <div style={{ width: "20%", padding: "10px", backgroundColor: "#f4f4f4" }}>
+        <h3>Quick Links</h3>
+        <ul style={{ listStyleType: "none", padding: 0 }}>
+          <li>
+            <a href="https://news.google.com" target="_blank" rel="noopener noreferrer">
+              Google News
+            </a>
+          </li>
+          <li>
+            <a href="https://fonts.google.com/icons" target="_blank" rel="noopener noreferrer">
+              Google Icons
+            </a>
+          </li>
+          <li>
+            <a href="https://www.twitch.tv" target="_blank" rel="noopener noreferrer">
+              Twitch
+            </a>
+          </li>
+          <li>
+            <a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer">
+              MDN Web Docs
+            </a>
+          </li>
+          <li>
+            <a href="https://stackoverflow.com" target="_blank" rel="noopener noreferrer">
+              Stack Overflow
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://codepen.io" target="_blank" rel="noopener noreferrer">
+              CodePen
+            </a>
+          </li>
+          <li>
+            <a href="https://dev.to" target="_blank" rel="noopener noreferrer">
+              Dev.to
+            </a>
+          </li>
+        </ul>
+      </div>
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div style={{ ...themeStyles }}>
-              <h1>Popular Movie List</h1>
-              <form onSubmit={handleEventSubmit}>
-                <input
-                  type="text"
-                  value={inputValue}
-                  placeholder="Enter event"
-                  onChange={(e) => setInputValue(e.target.value)}
-                />
-                <button type="submit">Add Event</button>
-              </form>
-              <ul>
-                {events.map((evt, index) => (
-                  <li key={index}>{evt}</li>
-                ))}
-              </ul>
-              <ul>
-                {streams.length > 0 ? (
-                  streams.map((stream) => <li key={stream.id}>{stream.title}</li>)
-                ) : (
-                  <li>No streams available</li>
-                )}
-              </ul>
-            </div>
-          }
-        />
-        <Route path="/movies" element={<Movies addToCart={addMovieToCart} />} />
-        <Route
-          path="/cart"
-          element={
-            <div>
-              <h1>Your Cart</h1>
-              {cart.length === 0 ? (
-                <p>Your cart is empty.</p>
-              ) : (
-                <ul>
-                  {cart.map((movie, index) => (
-                    <li key={index}>{movie.title}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          }
-        />
-      </Routes>
+      {/* Main Content */}
+      <div className="stream-list">
+        <h1>Welcome to StreamList</h1>
+        <p>This is the main page of StreamList.</p>
+      </div>
+
+      {/* Right Sidebar (Login/Register Section) */}
+      <div style={{ width: "20%", padding: "10px", backgroundColor: "#f9f9f9" }}>
+        <h3>Login</h3>
+        <form>
+          <label>
+            Email:
+            <input type="email" name="email" required />
+          </label>
+          <br />
+          <label>
+            Password:
+            <input type="password" name="password" required />
+          </label>
+          <br />
+          <button type="submit">Login</button>
+        </form>
+        <p>
+          Don't have an account? <a href="/register">Register</a>
+        </p>
+      </div>
     </div>
   );
 };
 
 export default StreamList;
+
